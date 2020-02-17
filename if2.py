@@ -14,14 +14,24 @@
   и выводя на экран результаты
 
 """
-def str_comp(str1, str2):
-	if str1.
+
+
+def str_comp(string1, string2):
+	if type(string1).__name__ != "str" and type(string1).__name__ != "str":
+		return 0
+	elif string1 == string2:
+		return 1
+	elif string1 > string2:
+		return 2
+	elif string1 != string2 and string2 == "Learn":
+		return 3
+
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
+    print(str_comp("123", "345"))
+    print(str_comp("fd", "gf"))
+    print(str_comp("123", "123"))
+    print(str_comp("123", "Learn"))
+
 if __name__ == "__main__":
-    main()
+	main()
