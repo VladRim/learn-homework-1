@@ -13,13 +13,30 @@
 * Вывести содержимое переменной на экран
 
 """
+def case_age(age):
+    if 3 <= age <= 6:
+        business = "Ходить в детский сад"
+    elif 6 <= age <= 16:
+        business = "Учиься в школе"
+    elif 16 <= age <= 21:
+        business = "Учиться в институте"
+    elif 21 <= age <= 65:
+        business = "Работать"
+    else:
+        business = "Отдыхать"
+		
+    print(business)
+	
 
 def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+   
+    user_age = int(input())
+    case_age(user_age)
+
 
 if __name__ == "__main__":
     main()
