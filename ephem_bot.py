@@ -13,6 +13,7 @@
 
 """
 import logging
+import settings
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
