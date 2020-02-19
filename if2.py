@@ -20,9 +20,9 @@ def str_comp(string1, string2):
 	if type(string1).__name__ == "str" and type(string1).__name__ == "str":
 		if string1 == string2:
 			return 1
-		elif string1 > string2:
+		elif len(string1) > len(string2):
 			return 2
-		elif string1 != string2 and string2 == "Learn":
+		elif string2 == "Learn":
 			return 3
 	else:
 		return 0
