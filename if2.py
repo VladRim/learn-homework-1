@@ -17,21 +17,25 @@
 
 
 def str_comp(string1, string2):
-	if type(string1).__name__ != "str" and type(string1).__name__ != "str":
+	if type(string1).__name__ == "str" and type(string1).__name__ == "str":
+		if string1 == string2:
+			return 1
+		elif string1 > string2:
+			return 2
+		elif string1 != string2 and string2 == "Learn":
+			return 3
+	else:
 		return 0
-	elif string1 == string2:
-		return 1
-	elif string1 > string2:
-		return 2
-	elif string1 != string2 and string2 == "Learn":
-		return 3
 
 
 def main():
-    print(str_comp("123", "345"))
-    print(str_comp("fd", "gf"))
-    print(str_comp("123", "123"))
-    print(str_comp("123", "Learn"))
+	print(str_comp(23, "23"))
+	print(str_comp("123", "345"))
+	print(str_comp("fd", "gf"))
+	print(str_comp("1238", "123"))
+	print(str_comp("123", "123"))
+	print(str_comp("123", "Learn"))
+
 
 if __name__ == "__main__":
 	main()
