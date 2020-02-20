@@ -21,13 +21,13 @@ def main():
         {'school_class': '4в', 'scores': [3, 3, 5, 5]},
         {'school_class': '4г', 'scores': [5, 4, 4, 5, 5]}
     ]
-    mean_school = 0
-    summ_scores_school = 0
-    cnt_class = 0
+    mean_school = 0  # средняя оценка по школе
+    summ_scores_school = 0  # сумма средних оценок по классам
+    cnt_class = 0  # счетчик классов
     for clas in list_of_classes:
-        summ_scores = 0
-        cnt_score = 0
-        mean_class = 0
+        summ_scores = 0  # сумма оценок в классе
+        cnt_score = 0  # количество оценок
+        mean_class = 0  # средняя оценка по классу
         for score in clas['scores']:
             summ_scores += score
             cnt_score += 1
