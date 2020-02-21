@@ -23,7 +23,7 @@ def case_age(age):
     elif 21 <= age <= 65:
         business = "Работать, работать, работать..."
     else:
-        business = "Можно отдыхать"
+        business = "В таком возрасте можно отдыхать:))"
 
     print(business)
 	
@@ -33,7 +33,7 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-   
+    print("Введите возраст:")
     user_age = int(input())
     case_age(user_age)
 
