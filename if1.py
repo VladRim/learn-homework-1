@@ -15,16 +15,16 @@
 """
 def case_age(age):
     if 3 <= age <= 6:
-        business = "Ходить в детский сад"
-    elif 6 <= age <= 16:
-        business = "Учиься в школе"
-    elif 16 <= age <= 21:
-        business = "Учиться в институте"
+        business = "Самое время ходить в детский сад"
+    elif age <= 16:
+        business = "Школьная пора"
+    elif age <= 21:
+        business = "Готовься к сессии"
     elif 21 <= age <= 65:
-        business = "Работать"
+        business = "Работать, работать, работать..."
     else:
-        business = "Отдыхать"
-		
+        business = "Можно отдыхать"
+
     print(business)
 	
 
