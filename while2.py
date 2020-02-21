@@ -19,7 +19,14 @@ def ask_user():
     """
     Замените pass на ваш код
     """
-    pass
-    
+    ask_user_dict = {"Привет": "Привет!", "Как дела?": "Хорошо", "Чем занимаешься?": "Работаю", "Пока": "Пока!"}
+    text = ""
+    while text != "Пока":
+        text = input()
+        for key in ask_user_dict:
+            if text == key:
+                print(ask_user_dict[key])
+
+
 if __name__ == "__main__":
     ask_user()
