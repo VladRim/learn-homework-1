@@ -18,6 +18,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import settings
 import ephem
+import datetime
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
                     level=logging.INFO,
@@ -32,11 +33,41 @@ def greet_user(bot, update):
 
 
 def ephem_explorer(bot, update):
-    msg= update.message.text.split(" ")
+    #planets = ['Солнце', 'Луна', 'Меркурий', 'Земля', 'Марс', 'Юпитер', 'Сатурн', 'Уран', 'Нептун', 'Плутон']
+    planets = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']
+    msg = update.message.text.split(" ")
     planet = msg[1]
-    constell = ephem.constellation(planet)
-    print(planet)
-    print(constell)
+    date = '2000/09/09'
+    #for pl in planets:
+    if msg == 'Sun':
+        planet_coordinates = ephem.Sun(date)
+    elif msg == 'Moon':
+        planet_coordinates = ephem.Moon(date)
+    elif msg == 'Mercury':
+        planet_coordinates = ephem.Mercury(date)
+    elif msg == 'Venus':
+        planet_coordinates = ephem.Venus(date)
+    elif msg == 'Mars':
+        planet_coordinates = ephem.Mars(date)
+    elif msg == 'Jupite':
+        planet_coordinates = ephem.Jupiter(date)
+    elif msg == 'Saturn':
+        planet_coordinates = ephem.Saturn(date)
+    elif msg == 'Uranus':
+        planet_coordinates = ephem.Uranus(date)
+    elif msg == 'Neptune':
+        planet_coordinates = ephem.Neptune(date)
+    else:
+        planet_coordinates = ephem.Pluto(date)
+
+
+
+    constellation = ephem.constellation(planet_coordinates)
+
+    #calc_data = getattr(ephem, planet)(date)
+    #final = ephem.constellation(calc_data)
+    print(constellation)
+
 
 def talk_to_me(bot, update):
     user_text = "Привет! {} Ты написал: {}".format(update.message.chat.first_name, update.message.text)
