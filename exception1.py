@@ -12,16 +12,19 @@
 
 def ask_user():
     ask_user_dict = {"Привет": "Привет!", "Как дела?": "Хорошо", "Чем занимаешься?": "Работаю", "Пока": "Пока!"}
-    text = ""
+    text = None
     while text != "Пока":
         try:
             text = input()
-            for key in ask_user_dict:
-                if text == key:
-                    print(ask_user_dict[key])
+            print(ask_user_dict[text])
         except KeyboardInterrupt:
             print("Пока!")
             break
+        except KeyError:
+            print(f"А слова {text} нет в словаре")
+            print("Добавьте ответ для пополнения словарного запаса, пожаалуйста:)")
+            text_ans = input()
+            ask_user_dict[text] = text_ans
 
 
 if __name__ == "__main__":
